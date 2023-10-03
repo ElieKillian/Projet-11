@@ -22,7 +22,7 @@ ReactDOM.createRoot(rootElement).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path= "/sign-in" element={<Login />} />
-          <Route path="/user/:id" element={<User />} />
+          <Route path="/user" element={<User />} /> 
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
@@ -31,3 +31,5 @@ ReactDOM.createRoot(rootElement).render(
     </Router>
   </React.StrictMode>
 );
+
+// /:id à ajouter à /user

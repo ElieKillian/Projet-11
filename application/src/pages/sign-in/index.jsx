@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Login(){
     return(
         <main class="main bg-dark">
@@ -17,7 +19,7 @@ function Login(){
                         <input type="checkbox" id="remember-me" />
                         <label for="remember-me">Remember me</label>
                     </div>
-                    <a href="./user.html" class="sign-in-button">Sign In</a>
+                    <Link to="../user" class="sign-in-button">Sign In</Link>
                     {/* <button class="sign-in-button">Sign In</button> */}
                 </form>
             </section>
