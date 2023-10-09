@@ -1,25 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from './argentBankLogo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLogs } from '../../reducers/login';
-
+import { setLogs, setUser } from '../../reducers/login';
+import {selectToken , selectIdUser} from '../../reducers/login';
 
 function Header() {
 
     const dispatch = useDispatch();
-    const select = useSelector(state => state.token);
-    const Logout = () => { dispatch(setLogs(null))};
-
-    const [selectState, setSelectState] = useState();
-     // Utilisation de useEffect pour surveiller les changements de state.token
-     useEffect(() => {
-        if (select === null || select === undefined) {
-            setSelectState(false)
-        } else {
-            setSelectState(true)
-        }
-    }, [select]); // Cette dépendance indique que l'effet dépend de la valeur de select
+    const select = useSelector(selectToken);
+    console.log('select :', select);
+    const userPage = useSelector(selectIdUser);
+    console.log('userPage :', userPage);
+    // const backHome = useNavigate();
+    
+    const Logout = () => { 
+        dispatch(setLogs(null))
+        dispatch(setUser(null))
+        Header();
+        // backHome('/')
+    };
 
 
     return (
@@ -32,7 +32,7 @@ function Header() {
                 />
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>
-            { selectState === false ? (
+            { userPage === null || userPage === undefined ?(
                 <div>
                     <Link to="sign-in" className="main-nav-item">
                         <i className="fa fa-user-circle"></i>
@@ -41,15 +41,15 @@ function Header() {
                 </div>
             ) : (
                 <div>
-                    <Link to='user' className="main-nav-item">
+                    <Link to={`user/${userPage.payload.body.id}`} className="main-nav-item">
                         <i className="fa fa-user-circle"></i>
-                        Tony
+                        {userPage.payload.body.firstName}
                     </Link>
                     <Link to='/' onClick={Logout} className="main-nav-item">
                         <i className="fa fa-sign-out"></i>
                         Sign Out
                     </Link>
-                </div>                
+                </div>     
             )}
         </nav>
     );

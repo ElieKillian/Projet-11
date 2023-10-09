@@ -24,5 +24,7 @@ const authSlice = createSlice({
 const { actions, reducer } = authSlice
 // on export chaque action individuellement
 export const { setLogs, setUser } = actions
+export const selectToken = state => state.token
+export const selectIdUser = state => state.user
 // on export le reducer comme default export
 export default reducer

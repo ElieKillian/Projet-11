@@ -1,4 +1,3 @@
-// import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
@@ -6,8 +5,8 @@ import { setLogs, setUser } from '../../reducers/login';
 
 function Login(){
 
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const dispatch = useDispatch();
     const redirect = useNavigate();
 
