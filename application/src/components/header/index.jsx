@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Logo from './argentBankLogo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLogs, setUser } from '../../reducers/login';
-import {selectToken , selectIdUser} from '../../reducers/login';
+import { disconnect } from '../../reducers/login';
+import {selectIdUser} from '../../reducers/login';
 
 function Header() {
 
-    const dispatch = useDispatch();
-    const select = useSelector(selectToken);
-    console.log('select :', select);
     const userPage = useSelector(selectIdUser);
-    console.log('userPage :', userPage);
-    // const backHome = useNavigate();
-    
-    const Logout = () => { 
-        dispatch(setLogs(null))
-        dispatch(setUser(null))
-        Header();
-        // backHome('/')
-    };
+    const dispatch = useDispatch();
+    const backHome = useNavigate();
 
+    const Logout = (() => {
+        dispatch(disconnect())
+        backHome('/') 
+    })
 
     return (
         <nav className="main-nav">
