@@ -26,7 +26,7 @@ function Login(){
 
         let result = await response.json();
 
-        console.log('resut :', result);
+        // console.log('resut :', result);
 
         if(result.body !== (null || undefined)){
 
@@ -39,7 +39,7 @@ function Login(){
     
             let resultUser = await responseUser.json();     
 
-            console.log('resultUser :',resultUser);
+            // console.log('resultUser :',resultUser);
 
             dispatch(setUser(resultUser));
 

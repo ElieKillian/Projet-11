@@ -17,7 +17,7 @@ const authSlice = createSlice({
         // profil utilisateur
         setUser: (state, action) => {
             state.user = action
-            console.log('UserState :',state.user)
+            // console.log('UserState :',state.user)
         },
         // déconnexion
         disconnect: (state, action) =>{
