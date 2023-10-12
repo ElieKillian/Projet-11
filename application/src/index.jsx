@@ -24,15 +24,13 @@ ReactDOM.createRoot(rootElement).render(
     <Provider store={store}>
       <Router>
         <div className='router'>
-        <div>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path= "/sign-in" element={<Login />} />
-            <Route path="/user/:id" element={<User />} /> 
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path= "/sign-in" element={<Login />} />
+          <Route path="/user/:id" element={<User />} /> 
+          <Route path="*" element={<Error />} />
+        </Routes>
         <Footer />
         </div>
       </Router>
