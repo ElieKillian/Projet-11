@@ -1,13 +1,13 @@
 import React from 'react';
-import Logo from './argentBankLogo.png';
+import Logo from './argentBankLogo.avif';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { disconnect } from '../../reducers/login';
-import {selectIdUser} from '../../reducers/login';
+import {selectUser} from '../../reducers/login';
 
 function Header() {
 
-    const userPage = useSelector(selectIdUser);
+    const userPage = useSelector(selectUser);
     const dispatch = useDispatch();
     const backHome = useNavigate();
 
