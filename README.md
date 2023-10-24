@@ -33,6 +33,10 @@ mongo --version
 npm install
 
 # Start local dev server
+# For npm version != 12.12
+nvs use 12.12
+npm run dev:server
+# For npm version = 12.12
 npm run dev:server
 
 # Populate database with two users
