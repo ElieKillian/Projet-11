@@ -75,6 +75,10 @@ body{
   width: 200px;
 }
 
+.fa-user-circle, .fa-sign-out{
+  margin-right :3px;
+}
+
 .hero {
   background-image: url('./img/bank-tree.avif');
   background-position: 0 -50px;
