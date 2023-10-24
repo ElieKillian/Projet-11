@@ -179,6 +179,49 @@ body{
   padding: 2rem;
 }
 
+
+/* ajout modale  */
+.modal-content{
+  box-sizing: border-box;
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
+
+.modal-content h1{
+  margin-top: 0;
+}
+
+.input-modal-wrapper{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+  gap : 10px;
+}
+
+.input-flex{
+  display: flex;
+  justify-content: center;
+  gap : 10px;
+}
+
+.modal-button {
+  display: block;
+  width: 12%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+}
+/* fin ajout */
+
 .sign-in-icon {
   font-size: 5rem;
 }

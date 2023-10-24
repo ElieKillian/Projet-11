@@ -37,7 +37,7 @@ function Header() {
                 <div>
                     <Link to={`user/${userPage.payload.body.id}`} className="main-nav-item">
                         <i className="fa fa-user-circle"></i>
-                        {userPage.payload.body.firstName}
+                        {userPage.payload.body.userName}
                     </Link>
                     <Link to='/' onClick={Logout} className="main-nav-item">
                         <i className="fa fa-sign-out"></i>
